@@ -61,7 +61,7 @@ export default class Ex_Shoe extends Component {
     });
     cloneCart[index].amount--;
     if (cloneCart[index].amount === 0) {
-      alert("Sản phẩm sẽ được xóa khỏi giỏ hàng")
+      alert(`Sản phẩm ${shoe.name} sẽ được xóa khỏi giỏ hàng`)
       cloneCart.splice(index, 1);
     }
     
