@@ -38,15 +38,52 @@ export default class Ex_Shoe extends Component {
       // tăng số lượng lên 1
       cloneCart[index].amount++;
     }
-      this.setState({
-        // cart: [shoe, ...this.state.cart],
+    this.setState({
+      // cart: [shoe, ...this.state.cart],
+      cart: cloneCart,
+    });
+  };
+  handleAddAmount = (shoe) => {
+    let cloneCart = [...this.state.cart];
+    let index = cloneCart.findIndex((item) => {
+      return item.id === shoe.id;
+    });
+    cloneCart[index].amount++;
+    this.setState({
+      // cart: [shoe, ...this.state.cart],
+      cart: cloneCart,
+    });
+  };
+  handleMinusAmount = (shoe) => {
+    let cloneCart = [...this.state.cart];
+    let index = cloneCart.findIndex((item) => {
+      return item.id === shoe.id;
+    });
+    cloneCart[index].amount--;
+    this.setState({
+      // cart: [shoe, ...this.state.cart],
+      cart: cloneCart,
+    });
+  };
+  handleDeleteShoe = (shoe) => {
+    let cloneCart = [...this.state.cart];
+    let index = cloneCart.findIndex((item) => {
+      return item.id === shoe.id;
+    });
+    cloneCart.splice(index, 1);
+    this.setState({
+      // cart: [shoe, ...this.state.cart],
       cart: cloneCart,
     });
   };
   render() {
     return (
       <div className="row w-100">
-        <Cart cart={this.state.cart} />
+        <Cart
+          cart={this.state.cart}
+          handleAddAmount={this.handleAddAmount}
+          handleMinusAmount={this.handleMinusAmount}
+        />
         <List
           handleViewDetail={this.handleChangeDetail}
           handleAddToCart={this.handleAddToCart}

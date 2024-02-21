@@ -22,9 +22,19 @@ export default class Cart extends Component {
                   <td>{item.name}</td>
                   <td>{item.price * item.amount}</td>
                   <td>
-                    <button className="btn-dark">-</button>
+                    <button
+                      className="btn-dark"
+                      onClick={() => this.props.handleMinusAmount(item)}
+                    >
+                      -
+                    </button>
                     <strong>{item.amount}</strong>
-                    <button className="btn-warning">+</button>
+                    <button
+                      className="btn-warning"
+                      onClick={() => this.props.handleAddAmount(item)}
+                    >
+                      +
+                    </button>
                   </td>
                   <td>
                     <img
