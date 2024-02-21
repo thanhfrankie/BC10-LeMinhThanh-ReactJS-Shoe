@@ -59,7 +59,10 @@ export default class Ex_Shoe extends Component {
     let index = cloneCart.findIndex((item) => {
       return item.id === shoe.id;
     });
-    cloneCart[index].amount--;
+    if (cloneCart[index].amount > 1) {
+      
+      cloneCart[index].amount--;
+    }
     this.setState({
       // cart: [shoe, ...this.state.cart],
       cart: cloneCart,
