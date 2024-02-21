@@ -83,6 +83,7 @@ export default class Ex_Shoe extends Component {
           cart={this.state.cart}
           handleAddAmount={this.handleAddAmount}
           handleMinusAmount={this.handleMinusAmount}
+          handleDeleteShoe={this.handleDeleteShoe}
         />
         <List
           handleViewDetail={this.handleChangeDetail}

@@ -47,7 +47,12 @@ export default class Cart extends Component {
                   </td>
 
                   <td>
-                    <button className="btn-danger">Delete</button>
+                    <button
+                      className="btn-danger"
+                      onClick={() => this.props.handleDeleteShoe(item)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               );
